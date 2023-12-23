@@ -1,0 +1,42 @@
+@using BlogApp.ViewModels;
+@model RegisterViewModel
+
+@{
+  ViewData["Title"] = "Üye Ol";
+}
+<div class="col-md-10 mx-auto col-lg-5">
+  <form asp-controller="Account" asp-action="Register" method="post" class="p-4 p-md-5 bg-body-tertiary">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-floating mb-3">
+      <input asp-for="FullName" type="fullname" class="form-control" id="floatingInput" required>
+      <label asp-for="FullName" for="floatingInput">Adınız</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input asp-for="Username" type="username" class="form-control" id="floatingInput" required>
+      <label asp-for="Username" for="floatingInput">Kullanıcı Adı</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input asp-for="Email" type="email" class="form-control" id="floatingInput" required>
+      <label asp-for="Email" for="floatingInput">E-mail</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input asp-for="Password" type="password" class="form-control" id="floatingPassword" required>
+      <label asp-for="Password" for="floatingPassword">Parola</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input asp-for="ConfirmPassword" type="password" class="form-control" id="floatingPassword" required>
+      <label asp-for="ConfirmPassword" for="floatingPassword">Parola tekrar</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Kayıt ol</button>
+    <hr class="my-4">
+    <small class="text-body-secondary">Hesabın var mı?</small>
+    <a asp-area="" asp-controller="Account" asp-action="Login" class="w-100 btn btn-lg btn-secondary">Giriş Yap</a>
+  </form>
+
+</div>
+
+@section Scripts {
+  @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+  }
+}

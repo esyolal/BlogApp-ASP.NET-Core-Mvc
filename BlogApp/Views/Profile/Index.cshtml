@@ -1,0 +1,18 @@
+@model List<BlogApp.Data.Posts>
+
+<h2>Kullanıcı Profil Sayfası</h2>
+
+<h3>Kullanıcının Postları</h3>
+<ul>
+    @foreach (var post in Model)
+    {
+        <li>
+            <p><strong>@post.UserName</strong> - @post.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+            <p>@post.Content</p>
+            <form asp-action="DeletePost" asp-controller="Profile" method="post">
+                <input type="hidden" name="postId" value="@post.PostId" />
+                <button type="submit" class="btn btn-danger">Postu Sil</button>
+            </form>
+        </li>
+    }
+</ul>

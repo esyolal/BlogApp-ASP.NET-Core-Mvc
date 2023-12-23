@@ -1,0 +1,66 @@
+@using BlogApp.ViewModels
+@using Microsoft.AspNetCore.Identity
+@using BlogApp.Models
+@model ProfileViewModel
+<div class="text-center">
+    <h2>Profilini Düzenle</h2>
+</div>
+
+<hr>
+@{
+    var successMessage = TempData["successMessage"] as string;
+}
+
+<div class="container mt-1">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                @if (!string.IsNullOrEmpty(successMessage))
+                {
+                    <div class="alert alert-success">
+                        @successMessage
+                    </div>
+                }
+                <div class="card-header text-center">
+                    <img src="data:image/png;base64,@Model.ProfilePictureBase64" class="rounded-circle" width="150px" />
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Profile" asp-action="Edit" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label for="profilePicture">Profil Fotoğrafı Değiştir</label>
+                            <input id="profilePicture" asp-for="ProfilePicture" class="form-control" type="file">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Ad</label>
+                            <input id="fullName" asp-for="FullName" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email adresi</label>
+                            <input id="email" asp-for="Email" class="form-control">
+                        </div>
+
+                        <div class="card mt-3">
+                            <div class="card-header">Parola Güncelle</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="password">Parola</label>
+                                    <input id="password" asp-for="Password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Parola Onay</label>
+                                    <input id="confirmPassword" asp-for="ConfirmPassword" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="mt-3 btn btn-primary btn-block">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

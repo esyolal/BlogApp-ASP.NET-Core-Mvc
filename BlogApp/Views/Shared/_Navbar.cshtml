@@ -1,0 +1,83 @@
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> UserManager
+
+
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container">
+
+        @if (User.Identity!.IsAuthenticated)
+        {
+
+            <a class="navbar-brand" asp-area="" asp-controller="Blog" asp-action="Index">
+                <img src="~/img/logo.png" width="75px" height="75px" alt="">
+            </a>
+        }
+        else
+        {
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/img/logo.png" width="75px" height="75px" alt="">
+            </a>
+        }
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-left">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            @{
+                            var currentUser = await UserManager.GetUserAsync(User);
+                                string pictureSourceBase64;
+                            if (currentUser != null && currentUser.PictureSource != null)
+                        {
+                            pictureSourceBase64 = Convert.ToBase64String(currentUser.PictureSource);
+                            <img src="data:image/png;base64,@pictureSourceBase64" alt="User Picture" class="rounded-circle" width="25px" />
+                        }
+                            }
+                            @User.Identity!.Name!
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                                </li>
+                            }
+                            <li>
+
+                                <a class="dropdown-item" asp-route-id="@UserManager.GetUserId(User)" asp-action="Index"
+                                    asp-controller="Profile">
+                                    Profil
+                                </a>
+
+
+                                <form id="logoutForm" asp-action="Logout" asp-controller="Account" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="dropdown-item">Çıkış Yap</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Üye Ol</a>
+                    </li>
+
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

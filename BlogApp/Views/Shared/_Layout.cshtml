@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BlogApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BlogApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" integrity="sha512-d0olNN35C6VLiulAobxYHZiXJmq+vl+BGIgAxQtD5+kqudro/xNMvv2yIHAciGHpExsIbKX3iLg+0B6d0k4+ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <partial name="_Navbar" />
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                @if (User.Identity!.IsAuthenticated)
+                {
+                    <a class="nav-link px-2 text-muted" asp-area="" asp-controller="Blog" asp-action="Index">Ana Sayfa</a>
+                }
+                else
+                {
+                    <a class="nav-link px-2 text-muted" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                }
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-2 text-muted" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-2 text-muted" asp-area="" asp-controller="Hakkimizda"
+                    asp-action="Index">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-2 text-muted" asp-area="" asp-controller="Iletisim"
+                    asp-action="Index">İletişim</a>
+            </li>
+        </ul>
+        <p class="text-center text-muted">© 2023 Wesy Company, Inc</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/a86ae3a0ec.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

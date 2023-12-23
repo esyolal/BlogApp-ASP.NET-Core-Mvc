@@ -1,0 +1,20 @@
+@model BlogApp.ViewModels.LoginViewModel
+
+<div class="col-md-10 mx-auto col-lg-5">
+        <form asp-controller="Account" asp-action="Login" method="post" class="p-4 p-md-5 bg-body-tertiary">
+          <div class="text-danger" asp-validation-summary="All"></div>
+          <div class="form-floating mb-3">
+            <input asp-for="Username" type="username" class="form-control" id="floatingInput" required>
+            <label asp-for="Username" for="floatingInput">Kullanıcı Adı</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input asp-for="Password" type="password" class="form-control" id="floatingPassword" required>
+            <label asp-for="Password" for="floatingPassword">Parola</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş Yap</button>
+          <hr class="my-4">
+          <small class="text-body-secondary">Hesabın yok mu?</small>
+          <a asp-area="" asp-controller="Account" asp-action="Register" class="w-100 btn btn-lg btn-secondary">Kayıt Ol</a>
+        </form>
+
+      </div>

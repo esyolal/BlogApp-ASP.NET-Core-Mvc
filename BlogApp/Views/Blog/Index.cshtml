@@ -1,0 +1,78 @@
+@model BlogApp.ViewModels.PostsUsersModel
+
+@{
+    ViewData["Title"] = "Blog";
+}
+<div class="row">
+    <div class="col-sm-3 col-md-2">
+        
+    </div>
+    <div class="col-sm-6 col-md-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4 text-center">Yeni Bir Post Oluştur</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Create" method="post">
+                            <div class="mb-3">
+                                <textarea class="form-control" style="resize: none;" maxlength="250" name="postContent"
+                                    id="postContent" rows="4" placeholder="Bir şeyler yaz..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <h3 class="text-center mb-4">Tüm Postlar</h3>
+
+        @if (Model.AllPosts != null && Model.AllPosts.Any())
+        {
+            @foreach (var post in Model.AllPosts.OrderByDescending(p => p.CreatedAt))
+            {
+                <div class="card mb-3" style="background-color: #93BFCF; color: #ffffff;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="data:image/png;base64,@(post.PictureSource != null ? Convert.ToBase64String(post.PictureSource) : string.Empty)"
+                                width="50px" />
+                            <div class="ms-2">
+                                <p class="mb-0">
+                                    <strong>@post.UserName</strong> - @post.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                                </p>
+
+                            </div>
+                        </div>
+                        <p class="mb-0">@post.Content</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <button onclick="location.href='@Url.Action("Post", "Blog", new { postId = post.PostId })';"
+                                    type="button" class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fa-solid fa-comment"></i> Yorum Yap
+                                </button>
+                            </div>
+                            <div>
+                                <form asp-action="DeletePost" asp-controller="Blog" method="post"
+                                    onsubmit="return confirm('Bu postu silmek istediğinize emin misiniz?');">
+                                    <input type="hidden" name="postId" value="@post.PostId" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i> Sil
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-center">Henüz hiç post yok.</p>
+        }
+
+    </div>
+    <div class="col-sm-3 col-md-2">
+    </div>
+</div>

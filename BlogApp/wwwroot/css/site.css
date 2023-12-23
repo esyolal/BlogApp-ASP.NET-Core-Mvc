@@ -1,0 +1,131 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.mr-right {
+  margin-right: auto !important;
+}
+
+.mr-left {
+  margin-left: auto !important;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+.post-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  margin-left: 10px;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+.comments-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.comment-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.comment-info {
+  margin-left: 10px;
+}
+
+.comment-content {
+  margin-top: 10px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+.btn-primary{
+  background-color: #1B4242;
+  border: none;
+}
+td{
+  color:#9EC8B9;
+}
+tr{
+  color:#258cfb;
+}
+.btn-primary:hover{
+  background-color: #5C8374;
+}
+.card {
+  border: none;
+  background-color: transparent;
+ 
+}
+.card-header {
+  border: none;
+  background-color: transparent;
+ 
+}
+
+body {
+  color: black;
+  background-color: #6096B4;
+  margin-bottom: 60px;
+}
+
+footer {
+  position: relative;
+}
+
+.vl {
+  border-left: 6px solid green;
+  height: 500px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: black;
+  cursor: inherit;
+  display: block;
+}
+
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+/* this is only due to codepen display don't use this outside of codepen */
+.container {
+  padding-top: 20px;
+}
