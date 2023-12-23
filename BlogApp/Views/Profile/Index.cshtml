@@ -1,8 +1,11 @@
 @model List<BlogApp.Data.Posts>
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> UserManager
 
-<h2>Kullanıcı Profil Sayfası</h2>
-
-<h3>Kullanıcının Postları</h3>
+<h2>Profil Seçenekleri</h2>
+<a asp-action="Edit" asp-controller="Profile" asp-route-id="@UserManager.GetUserId(User)"
+    class="mt-3 btn btn-light">Profilini düzenle</a>
+<h4 class="mt-3">Paylaşılan Postlar</h4>
 <ul>
     @foreach (var post in Model)
     {
@@ -15,4 +18,5 @@
             </form>
         </li>
     }
+
 </ul>
