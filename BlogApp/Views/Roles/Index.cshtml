@@ -7,7 +7,6 @@
         <tr>
             <th>Kullanıcı Id</th>
             <th>Rol Adı</th>
-            <th>Kullanıcılar</th>
             <th style="width: 125px;"></th>
         </tr>
         </thead>
@@ -19,7 +18,6 @@
             <tr>
                 <td>@role.Id</td>
                 <td>@role.Name</td>
-                <td asp-role-users="@role.Id"></td>
                 <td>
                     <form method="post">
                         <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@role.Id">Edit</a>

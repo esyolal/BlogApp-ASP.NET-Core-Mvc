@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ng7RM6+VlePe59gicnkYMSTdNpPyp0VRwJY7hyp+GxAqAuKZkZ7ShVorA/qsaBIHImPvXnbmrX+0GZFuMWv71Q==",
+  "dgSpecHash": "HS4HFlw11ty3HkHd1P2VlWlTVAM+q8dtM1IScBaHYdYAAK08wf6it+UPAfw4Zze4bPAVC1OEALLPHUQMl0GD6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\BlogApp.csproj",
+  "projectFilePath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\BlogApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emre\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Emre\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

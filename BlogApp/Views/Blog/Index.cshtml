@@ -3,16 +3,34 @@
 @{
     ViewData["Title"] = "Blog";
 }
+@{
+    var successMessage = TempData["successMessage"] as string;
+}
+@{
+    var failedMessage = TempData["failedMessage"] as string;
+}
 <div class="row">
+
     <div class="col-sm-3 col-md-2">
-        
+        @Html.Partial("_Sidebar")
     </div>
     <div class="col-sm-6 col-md-8">
         <div class="row justify-content-center">
+            <div class="col-lg-3 mt-3">
+                <p>Merhaba, <em>@User.Identity.Name</em> </p>
+                <img src="data:image/png;base64,@(Model.User.PictureSource != null ? Convert.ToBase64String(Model.User.PictureSource) : string.Empty)"
+                    width="100px" />
+            </div>
             <div class="col-lg-6">
                 <h2 class="mb-4 text-center">Yeni Bir Post Oluştur</h2>
                 <div class="card">
                     <div class="card-body">
+                        @if (!string.IsNullOrEmpty(successMessage))
+                        {
+                            <div class="alert alert-success">
+                                @successMessage
+                            </div>
+                        }
                         <form asp-action="Create" method="post">
                             <div class="mb-3">
                                 <textarea class="form-control" style="resize: none;" maxlength="250" name="postContent"
@@ -20,6 +38,8 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Post Oluştur</button>
                         </form>
+                        <br>
+
                     </div>
                 </div>
             </div>
@@ -33,7 +53,7 @@
         {
             @foreach (var post in Model.AllPosts.OrderByDescending(p => p.CreatedAt))
             {
-                <div class="card mb-3" style="background-color: #93BFCF; color: #ffffff;">
+                <div class="card mb-3">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
                             <img src="data:image/png;base64,@(post.PictureSource != null ? Convert.ToBase64String(post.PictureSource) : string.Empty)"
@@ -45,7 +65,9 @@
 
                             </div>
                         </div>
-                        <p class="mb-0">@post.Content</p>
+                        <div class="container">
+                            <p>@post.Content</p>
+                        </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <button onclick="location.href='@Url.Action("Post", "Blog", new { postId = post.PostId })';"
@@ -54,13 +76,16 @@
                                 </button>
                             </div>
                             <div>
-                                <form asp-action="DeletePost" asp-controller="Blog" method="post"
-                                    onsubmit="return confirm('Bu postu silmek istediğinize emin misiniz?');">
-                                    <input type="hidden" name="postId" value="@post.PostId" />
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fa-solid fa-trash"></i> Sil
-                                    </button>
-                                </form>
+                                @if (User.IsInRole("Admin") || (post.UserId == Model.User.Id))
+                                {
+                                    <form asp-action="DeletePost" asp-controller="Blog" method="post"
+                                        onsubmit="return confirm('Bu postu silmek istediğinize emin misiniz?');">
+                                        <input type="hidden" name="postId" value="@post.PostId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fa-solid fa-trash"></i> Sil
+                                        </button>
+                                    </form>
+                                }
                             </div>
                         </div>
                     </div>

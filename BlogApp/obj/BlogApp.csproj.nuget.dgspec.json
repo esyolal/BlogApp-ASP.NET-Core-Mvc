@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\BlogApp.csproj": {}
+    "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\BlogApp.csproj": {
+    "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\BlogApp.csproj",
+        "projectPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\BlogApp.csproj",
         "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp\\obj\\",
+        "outputPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\blogapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config"

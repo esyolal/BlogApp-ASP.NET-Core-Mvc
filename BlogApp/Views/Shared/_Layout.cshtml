@@ -12,9 +12,15 @@
 </head>
 
 <body>
-    <header>
-        <partial name="_Navbar" />
-    </header>
+     @if (!User.Identity.IsAuthenticated)
+        {
+            @Html.Partial("_Navbar") 
+        }
+        else
+        {
+           <header></header> 
+        }
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

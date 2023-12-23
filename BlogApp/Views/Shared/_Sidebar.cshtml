@@ -1,0 +1,37 @@
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<ApplicationUser> UserManager
+
+
+<style>
+    .fixed-sidebar {
+        
+        position: fixed;
+        overflow-y: auto;
+        
+    }
+</style>
+
+<div class="col-sm-3 col-md-2 fixed-sidebar">
+    <div class="p-3">
+        <ul class="list-unstyled">
+            <li>
+                <a class="btn btn-dark w-50 mb-2" href="@Url.Action("Index", "Home")">
+                    <i class="fa-solid fa-house"></i> Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-dark w-50 mb-2" asp-action="Index" asp-controller="Profile"
+                    asp-route-id="@UserManager.GetUserId(User)">
+                    <i class="fa-solid fa-user"></i> Profil
+                </a>
+            </li>
+            <li>
+                <form asp-action="Logout" asp-controller="Account" method="post">
+                    <button type="submit" class="btn w-50 btn-dark">
+                        <i class="fa-solid fa-sign-out"></i> Çıkış Yap
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

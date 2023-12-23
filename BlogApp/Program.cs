@@ -18,17 +18,18 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Default Password settings.
-    options.Password.RequireDigit = false;
-    options.Password.RequireLowercase = false;
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
+    options.Password.RequireUppercase = true;
     options.Password.RequiredLength = 8;
-    options.Password.RequiredUniqueChars = 1;
+    options.Password.RequiredUniqueChars = 0;
 
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
     options.Lockout.MaxFailedAccessAttempts = 5;
 });
-builder.Services.ConfigureApplicationCookie(options => {
+builder.Services.ConfigureApplicationCookie(options =>
+{
     options.LoginPath = "/Account/Login";
     options.AccessDeniedPath = "/Account/AccessDenied";
     options.SlidingExpiration = true;

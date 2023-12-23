@@ -43,6 +43,9 @@ html {
   bottom: 0;
   right: 0;
 }
+label{
+  color:black;
+}
 
 .comment-container {
   display: flex;
@@ -61,17 +64,17 @@ html {
   min-height: 100%;
 }
 .btn-primary{
-  background-color: #1B4242;
+  background-color: #31304D;
   border: none;
 }
 td{
-  color:#9EC8B9;
+  color:#F0ECE5;
 }
 tr{
-  color:#258cfb;
+  color:#31304D;
 }
 .btn-primary:hover{
-  background-color: #5C8374;
+  background-color: #7360DF;
 }
 .card {
   border: none;
@@ -85,8 +88,8 @@ tr{
 }
 
 body {
-  color: black;
-  background-color: #6096B4;
+  color: #F0ECE5;
+  background-color: #161A30;
   margin-bottom: 60px;
 }
 
@@ -121,7 +124,7 @@ footer {
 }
 
 input[readonly] {
-  background-color: white !important;
+  background-color: black !important;
   cursor: text !important;
 }
 

@@ -3906,11 +3906,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emre\\Desktop\\BlogApp\\blogapp\\BlogApp.csproj",
+      "projectUniqueName": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\BlogApp\\BlogApp.csproj",
       "projectName": "BlogApp",
-      "projectPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\blogapp\\BlogApp.csproj",
+      "projectPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\BlogApp\\BlogApp.csproj",
       "packagesPath": "C:\\Users\\Emre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\blogapp\\obj\\",
+      "outputPath": "C:\\Users\\Emre\\Desktop\\BlogApp\\BlogApp-ASP.NET-Core-Mvc\\BlogApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Emre\\AppData\\Roaming\\NuGet\\NuGet.Config"

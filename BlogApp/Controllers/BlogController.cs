@@ -56,7 +56,7 @@ namespace BlogApp.Controllers
 
                 _context.Posts.Add(newPost);
                 _context.SaveChanges();
-
+                TempData["successMessage"] = "Post Eklendi.";
 
                 return RedirectToAction("Index", "Blog");
             }
@@ -85,7 +85,6 @@ namespace BlogApp.Controllers
 
             if (post != null)
             {
-                // Eğer post.Comments null ise, yeni bir List<Comments> örneği oluşturarak başlatın
                 if (post.Comments == null)
                 {
                     post.Comments = new List<Comments>();
@@ -99,10 +98,10 @@ namespace BlogApp.Controllers
                     UserName = currentUser?.UserName,
                     UserPictureSource = currentUser?.PictureSource
                 };
-
+                
                 post.Comments.Add(comment);
                 _context.SaveChanges();
-
+                TempData["successMessage"] = "Yorum Eklendi.";
                 return RedirectToAction("Post", new { postId = postId });
             }
 
@@ -125,45 +124,44 @@ namespace BlogApp.Controllers
 
             if (userRoles.Contains("Admin") || (post.UserId == userId))
             {
-
+                
                 _context.Posts.Remove(post);
                 await _context.SaveChangesAsync();
+                TempData["successMessage"] = "Başarıyla silindi.";
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                return RedirectToAction("AccessDenied", "Account");
+                TempData["failedMessage"] = "Yetkisiz erişim.";
+                return RedirectToAction("Index");
             }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult LikePost(int postId)
+        public async Task<IActionResult> DeleteComment(int commentId)
         {
-            var post = _context.Posts.FirstOrDefault(p => p.PostId == postId);
+            var comment = _context.Comments.Find(commentId);
 
-            if (post == null)
+            if (comment == null)
             {
                 return NotFound();
             }
 
             var userId = _userManager.GetUserId(User);
-
-            if (!post.LikedBy.Contains(userId))
+            var userRoles = await _userManager.GetRolesAsync(await _userManager.GetUserAsync(User));
+            if (userRoles.Contains("Admin") || (comment.UserId == userId))
             {
-                // Kullanıcı daha önce beğenmediyse beğeni ekle
-                post.Likes++;
-                post.LikedBy.Add(userId);
+                _context.Comments.Remove(comment);
+                _context.SaveChanges();
+
+                TempData["successMessage"] = "Başarıyla silindi.";
+                return RedirectToAction("Post", new { postId = comment.PostId });
             }
             else
             {
-                // Kullanıcı beğeniyorsa beğeni çıkar
-                post.Likes--;
-                post.LikedBy.Remove(userId);
+                TempData["failedMessage"] = "Yetkisiz erişim.";
+                return RedirectToAction("Post", new { postId = comment.PostId });
             }
-
-            _context.SaveChanges();
-
-            return RedirectToAction("Index"); // Veya başka bir sayfaya yönlendirme yapabilirsiniz
         }
 
     }

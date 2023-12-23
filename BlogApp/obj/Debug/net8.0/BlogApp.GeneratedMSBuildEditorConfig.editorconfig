@@ -9,111 +9,115 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlogApp
 build_property.RootNamespace = BlogApp
-build_property.ProjectDir = C:\Users\Emre\Desktop\BlogApp\BlogApp\
+build_property.ProjectDir = C:\Users\Emre\Desktop\BlogApp\BlogApp-ASP.NET-Core-Mvc\BlogApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Emre\Desktop\BlogApp\BlogApp
+build_property.MSBuildProjectDirectory = C:\Users\Emre\Desktop\BlogApp\BlogApp-ASP.NET-Core-Mvc\BlogApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Account/Login.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Account/Register.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Blog/Create.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Blog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Blog/Index.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Blog/Post.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Blog/Post.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Home/Hakkimizda.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Home/Hakkimizda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIYWtraW1pemRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Home/Iletisim.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Home/Iletisim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbGV0aXNpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Home/Index.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Home/Login.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Home/Privacy.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Profile/Edit.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Profile/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Profile/Index.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Roles/Create.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Roles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Roles/Edit.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Roles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Roles/Index.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Shared/Error.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Shared/_Navbar.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Users/Create.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Users/Edit.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Users/Index.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/_ViewImports.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/_ViewStart.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emre/Desktop/BlogApp/BlogApp/Views/Shared/_Layout.cshtml]
+[C:/Users/Emre/Desktop/BlogApp/BlogApp-ASP.NET-Core-Mvc/BlogApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gr6vkwv4lw
