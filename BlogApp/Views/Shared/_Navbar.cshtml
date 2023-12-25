@@ -36,10 +36,10 @@
                             if (currentUser != null && currentUser.PictureSource != null)
                         {
                             pictureSourceBase64 = Convert.ToBase64String(currentUser.PictureSource);
-                            <img src="data:image/png;base64,@pictureSourceBase64" alt="User Picture" class="rounded-circle" width="25px" />
+                            <img src="data:image/png;base64,@pictureSourceBase64" alt="User Picture" class="rounded-circle" height="25px" width="25px" />
                         }
                             }
-                            @User.Identity!.Name!
+                            @User.Identity!.Name
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @if (User.IsInRole("Admin"))

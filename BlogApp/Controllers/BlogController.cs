@@ -98,7 +98,7 @@ namespace BlogApp.Controllers
                     UserName = currentUser?.UserName,
                     UserPictureSource = currentUser?.PictureSource
                 };
-                
+
                 post.Comments.Add(comment);
                 _context.SaveChanges();
                 TempData["successMessage"] = "Yorum Eklendi.";
@@ -124,7 +124,7 @@ namespace BlogApp.Controllers
 
             if (userRoles.Contains("Admin") || (post.UserId == userId))
             {
-                
+
                 _context.Posts.Remove(post);
                 await _context.SaveChangesAsync();
                 TempData["successMessage"] = "Başarıyla silindi.";

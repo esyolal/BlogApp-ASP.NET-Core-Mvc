@@ -63,6 +63,12 @@ html {
   position: relative;
   min-height: 100%;
 }
+.btn-darkred{
+  background-color: #610000;
+}
+.btn-darkred:hover{
+  background-color: #ab0606;
+}
 .btn-primary{
   background-color: #31304D;
   border: none;

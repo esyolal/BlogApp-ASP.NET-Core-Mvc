@@ -9,6 +9,15 @@
 @{
     var failedMessage = TempData["failedMessage"] as string;
 }
+
+<style>
+    #posts{
+        background-color: #363062;
+    }
+    #create{
+        background-color: ;
+    }
+</style>
 <div class="row">
 
     <div class="col-sm-3 col-md-2">
@@ -16,12 +25,14 @@
     </div>
     <div class="col-sm-6 col-md-8">
         <div class="row justify-content-center">
-            <div class="col-lg-3 mt-3">
+            
+            <div id="create" class="col-lg-6" style="text-align: center;">
+                <div>
                 <p>Merhaba, <em>@User.Identity.Name</em> </p>
                 <img src="data:image/png;base64,@(Model.User.PictureSource != null ? Convert.ToBase64String(Model.User.PictureSource) : string.Empty)"
-                    width="100px" />
+                    width="75px" height="75px" class="rounded-circle" />
             </div>
-            <div class="col-lg-6">
+            <br>
                 <h2 class="mb-4 text-center">Yeni Bir Post Oluştur</h2>
                 <div class="card">
                     <div class="card-body">
@@ -32,9 +43,10 @@
                             </div>
                         }
                         <form asp-action="Create" method="post">
+                            <div class="text-danger" asp-validation-summary="All"></div>
                             <div class="mb-3">
-                                <textarea class="form-control" style="resize: none;" maxlength="250" name="postContent"
-                                    id="postContent" rows="4" placeholder="Bir şeyler yaz..."></textarea>
+                                <textarea class="form-control" style="resize: none;" maxlength="200" name="postContent"
+                                    id="postContent" rows="4" placeholder="Bir şeyler yaz..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Post Oluştur</button>
                         </form>
@@ -53,11 +65,11 @@
         {
             @foreach (var post in Model.AllPosts.OrderByDescending(p => p.CreatedAt))
             {
-                <div class="card mb-3">
+                <div id="posts" class="card mb-3">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
                             <img src="data:image/png;base64,@(post.PictureSource != null ? Convert.ToBase64String(post.PictureSource) : string.Empty)"
-                                width="50px" />
+                                width="50px" class="rounded-circle" height="50px" />
                             <div class="ms-2">
                                 <p class="mb-0">
                                     <strong>@post.UserName</strong> - @post.CreatedAt.ToString("dd.MM.yyyy HH:mm")
@@ -71,7 +83,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <button onclick="location.href='@Url.Action("Post", "Blog", new { postId = post.PostId })';"
-                                    type="button" class="btn btn-outline-primary btn-sm me-2">
+                                    type="button" class="btn btn-primary">
                                     <i class="fa-solid fa-comment"></i> Yorum Yap
                                 </button>
                             </div>
@@ -81,7 +93,7 @@
                                     <form asp-action="DeletePost" asp-controller="Blog" method="post"
                                         onsubmit="return confirm('Bu postu silmek istediğinize emin misiniz?');">
                                         <input type="hidden" name="postId" value="@post.PostId" />
-                                        <button type="submit" class="btn btn-danger btn-sm">
+                                        <button type="submit" class="btn btn-darkred">
                                             <i class="fa-solid fa-trash"></i> Sil
                                         </button>
                                     </form>
