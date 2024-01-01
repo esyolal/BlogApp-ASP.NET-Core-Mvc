@@ -37,7 +37,7 @@ namespace BlogApp.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Create(string postContent)
+        public async Task<IActionResult> Create(string postContent, IFormFile postPicture)
         {
             if (User.Identity!.IsAuthenticated)
             {
@@ -53,7 +53,14 @@ namespace BlogApp.Controllers
                     PictureSource = currentUser?.PictureSource
                 };
 
-
+                if (postPicture != null && postPicture.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await postPicture.CopyToAsync(memoryStream);
+                        newPost.PostPicture = memoryStream.ToArray();
+                    }
+                }
                 _context.Posts.Add(newPost);
                 _context.SaveChanges();
                 TempData["successMessage"] = "Post Eklendi.";
@@ -64,6 +71,7 @@ namespace BlogApp.Controllers
 
             return RedirectToAction("Index", "Blog");
         }
+
         public IActionResult Post(int postId)
         {
             var post = _context.Posts.Include(p => p.Comments).FirstOrDefault(p => p.PostId == postId);

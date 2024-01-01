@@ -23,9 +23,13 @@ namespace BlogApp.Data
         public string? UserId { get; set; }
 
         public int Likes { get; set; }
-        public List<string> ?LikedBy { get; set; }
+        public List<string>? LikedBy { get; set; }
         public string? UserName { get; set; }
         public byte[]? PictureSource { get; set; }
+
+        public byte[]? PostPicture { get; set; }
+
+
         [ForeignKey("UserId")]
         public ApplicationUser? User { get; set; }
     }
